@@ -4,7 +4,7 @@ class ArmNoneEabiBinutils < Formula
   homepage 'http://www.gnu.org/software/binutils/binutils.html'
   url 'http://ftpmirror.gnu.org/binutils/binutils-2.26.tar.gz'
   mirror 'http://ftp.gnu.org/gnu/binutils/binutils-2.26.tar.gz'
-  sha1 'a637508cffeb2323b14bc8dd65378819768ad4ff'
+  sha1 'bb933ec42eb2002d9270bd4c62a26c3706589ee9'
 
   def install
     args = ["--disable-debug",
