@@ -2,14 +2,14 @@ require 'formula'
 
 class ArmNoneEabiGcc < Formula
   homepage 'http://www.gnu.org/software/gcc/gcc.html'
-  url 'http://ftpmirror.gnu.org/gcc/gcc-4.9.1/gcc-4.9.1.tar.bz2'
-  mirror 'ftp://gcc.gnu.org/pub/gcc/releases/gcc-4.9.1/gcc-4.9.1.tar.bz2'
-  sha1 '3f303f403053f0ce79530dae832811ecef91197e'
+  url 'http://ftpmirror.gnu.org/gcc/gcc-5.3.0/gcc-5.3.0.tar.bz2'
+  mirror 'ftp://gcc.gnu.org/pub/gcc/releases/gcc-5.3.0/gcc-5.3.0.tar.bz2'
+  sha1 '0612270b103941da08376df4d0ef4e5662a2e9eb'
 
   # http://sourceware.org/newlib/
   resource 'newlib' do
-    url 'ftp://sourceware.org/pub/newlib/newlib-2.1.0.tar.gz'
-    sha1 '364d569771866bf55cdbd1f8c4a6fa5c9cf2ef6c'
+    url 'ftp://sourceware.org/pub/newlib/newlib-2.3.0.20160104.tar.gz'
+    sha1 '43d8ac3eb3b582efdf68c217c4a1136a3efa0068'
   end
 
   depends_on 'gmp'
