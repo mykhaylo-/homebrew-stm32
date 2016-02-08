@@ -23,41 +23,6 @@ class ArmNoneEabiGcc < Formula
   option 'disable-cxx', 'Don\'t build the g++ compiler'
 
   def install
-    resource('newlib').stage do
-      # Reported and fixed upstream
-      # http://comments.gmane.org/gmane.comp.lib.newlib/8879
-      Patch.create(:p1, <<EOL).apply
-diff --git a/libgloss/arm/configure b/libgloss/arm/configure
-index cc7e570..bdd4b13 100644
---- a/libgloss/arm/configure
-+++ b/libgloss/arm/configure
-@@ -2551,7 +2551,7 @@ esac
-
-
-
--host_makefile_frag=${srcdir}/../config/default.mh
-+host_makefile_frag=`cd $srcdir/../config;pwd`/default.mh
-
- host_makefile_frag_path=$host_makefile_frag
-
-diff --git a/libgloss/arm/configure.in b/libgloss/arm/configure.in
-index d617f49..f9409ca 100644
---- a/libgloss/arm/configure.in
-+++ b/libgloss/arm/configure.in
-@@ -59,7 +59,8 @@ esac
-
- AC_SUBST(objtype)
-
--host_makefile_frag=${srcdir}/../config/default.mh
-+host_makefile_frag=`cd $srcdir/../config;pwd`/default.mh
-+
-
- dnl We have to assign the same value to other variables because autoconf
- dnl doesn't provide a mechanism to substitute a replacement keyword with
-EOL
-      (buildpath).install Dir['newlib', 'libgloss']
-    end
-
     # See https://gcc.gnu.org/ml/gcc/2014-05/msg00014.html
     ENV["CC"]  += " -fbracket-depth=1024"
     ENV["CXX"] += " -fbracket-depth=1024"
